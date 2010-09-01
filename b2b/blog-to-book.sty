@@ -8,6 +8,9 @@
 \usepackage{a4wide}
 \usepackage{sectsty}
 \usepackage{indentfirst}
+\usepackage{url}
+
+%\usepackage{hyperref}
 
 \renewcommand\contentsname{สารบัญ}
 \renewcommand\chaptername{}
@@ -36,7 +39,7 @@
 
 \newcommand{\ltc}[1]{\ltcaps{#1}\rmfamily}
 
-\newcommand{\link}[2]{#1\footnote{#2}}
+\newcommand{\link}[2]{#1\footnote{\url{#2}}}
 
 \newcommand{\posttitle}[1]{\chapter{#1}}
 \newcommand{\postdate}[1]{\noindent\textbf{#1} \\}

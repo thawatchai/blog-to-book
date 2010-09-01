@@ -2,26 +2,19 @@
 %!TEX encoding = UTF-8 Unicode
 
 \documentclass[12pt]{book}
-\usepackage{blog-to-book-1.00}
+\usepackage{b2b/blog-to-book}
 
 \title{สร้างหนังสือ GotoKnow Blog-to-Book ด้วย \ltc{\LaTeX}}
 \author{
 \textbf{ผศ.ดร.ธวัชชัย ปิยะวัฒน์} \\
-\texttt{GotoKnow.org/profile/thawatchai} \\ \\
-รุ่น 1.00
+\texttt{GotoKnow.org/profile/thawatchai}
 }
 
-\include{blog-to-book-begin-1.00}
+\include{b2b/blog-to-book-begin}
 
 \posttitle{คำนำ}
 
-โครงการ Blog-to-Book ของ GotoKnow.org เป็นโครงการที่ดีอย่างยิ่ง แต่ค่าจัดรูปเล่มที่ดีไซน์เนอร์เรียกมาสำหรับแต่ละเล่มนั้นแพงเหลือเกิน
-
-สอบถามดูแล้วเขาบอกว่าราคานี้เป็นราคามาตราฐาน แต่ถ้าราคาคิดเป็นเงินดอลลาร์เท่ากับประมาณ \$750 เหรียญสำหรับการจัดหนังสือที่มีเนื้อเป็นตัวอักษรเป็นหลักขนาด 100-150 หน้านั้นแพงมาก จ้างดีไซน์เนอร์ที่อเมริกาหรือที่ยุโรปทำยังจะถูกกว่า ปัญหาคือกราฟฟิคดีไซน์เนอร์ในต่างประเทศไม่รู้จักภาษาไทย เรื่องนี้น่าคิดว่าหลายอาชีพในประเทศไทยนั้น มีค่าตัวแพงกว่าต่างประเทศเสียอีก ไม่แปลกเพราะประเทศไทยเริ่มก้าวเป็นประเทศพัฒนาแล้วทั้งทางเศรษฐกิจและสังคม อย่างที่เห็นได้ในปัจจุบัน
-
-ด้วยเหตุนี้ เราจึงทดลองอะไรบางอย่างที่แปลกประหลาด นั่นคือการเอา \ltc{\LaTeX} มาใช้ในการจัดเอกสารสำหรับโครงการนี้
-
-ปรากฎว่า \ltc{\LaTeX} ใช้ได้และใช้ได้ดี ขอบคุณซอฟต์แวร์ดี ๆ อย่าง \ltc{\LaTeX}
+โครงการ Blog-to-Book ของ GotoKnow.org เป็นโครงการที่ดีอย่างยิ่ง แต่ค่าจัดรูปเล่มที่ดีไซน์เนอร์เรียกมาสำหรับแต่ละเล่มนั้นเป็นราคาที่ GotoKnow.org ไม่สามารถจ่ายได้ในระยะยาว ด้วยเหตุนี้ เราจึงทดลองอะไรบางอย่างที่แปลกประหลาด นั่นคือการเอา \ltc{\LaTeX} มาใช้ในการจัดเอกสารสำหรับโครงการนี้ ปรากฎว่า \ltc{\LaTeX} ใช้ได้และใช้ได้ดีมาก ขอบคุณซอฟต์แวร์ดี ๆ อย่าง \ltc{\LaTeX}
 
 \posttitle{โครงสร้างหนังสือ blog-to-book}
 
@@ -51,6 +44,10 @@
 
 \item[DIP SIPA Fonts] ติดตั้งได้จาก \texttt{http://www.thaiopensource.org/download/}ฟอนต์\texttt{-sipa-dip}
 
+\item[Git for Windows] เพื่อ download ไฟล์ช่วยสร้างหนังสือ
+
+\item[blog-to-book] download ด้วย git จาก \url{http://github.com/thawatchai/blog-to-book} หรือถ้าไม่ใช้ git จะคลิกที่ ``Download Source'' ที่มุมขวาบนก็ได้
+
 \end{description}
 
 \posttitle{โครงสร้าง folder ของหนังสือ}
@@ -58,20 +55,23 @@
 ใน folder ของหนังสือเล่มหนึ่ง ๆ จะประกอบด้วยไฟล์ต่อไปนี้
 
 \begin{itemize}
-
-\item blog-to-book-1.00.sty
-
-\item blog-to-book-begin-1.00.tex
-
-\item blog-to-book-end-1.00.tex
-
-\item ไฟล์ของหนังสือนั้น ๆ เช่น \texttt{abc.tex}
-
+\item \texttt{blog-to-book.tex}
+\item \texttt{blog-to-book.pdf}
 \end{itemize}
 
-สามไฟล์แรกคือไฟล์เพื่อช่วยในการทำหนังสือ หมายเลขท้ายไฟล์ (*-1.00.*) คือเลขรุ่นของไฟล์เพื่อช่วยทำหนังสือ อาจจะเพิ่มเป็นรุ่นใหม่ได้ในอนาคต
+ไฟล์สองไฟล์นี้เป็นไฟล์ของเอกสารนี้
 
-หลังจากสั่งโปรแกรมทำงานเพื่อสร้างไฟล์หนังสือจะได้ไฟล์ PDF และไฟล์ประกอบอื่น ๆ ไฟล์เหล่านั้นสามารถลบทิ้งได้
+และไฟล์ใน folder ย่อย b2b
+
+\begin{itemize}
+\item \texttt{blog-to-book.sty}
+\item \texttt{blog-to-book-begin.tex}
+\item \texttt{blog-to-book-end.tex}
+\end{itemize}
+
+ไฟล์เหล่านี้คือไฟล์เพื่อช่วยในการทำหนังสือ
+
+ผู้จัดหนังสือจะสร้างไฟล์ของหนังสือนั้น ๆ เช่น \texttt{abc.tex}ใน folder หลักและพิมพ์แก้ไขเพิ่มเติมข้อมูลของหนังสือในไฟล์นี้ หลังจากสั่งโปรแกรมทำงานเพื่อสร้างไฟล์หนังสือจะได้ไฟล์ PDF และไฟล์ประกอบอื่น ๆ ไฟล์เหล่านั้นสามารถลบทิ้งได้
 
 \posttitle{tags สำหรับ blog-to-book}
 
@@ -85,13 +85,29 @@
 
 \item[\textbackslash link] tag นี้มีไว้เพื่อใส่ลิงก์ในเนื้อหาของบันทึก ใช้ดังนี้ \texttt{\textbackslash link\{Giving = Happiness\}\{http://www.worldchanging.com/archives/007907.html\}} เมื่อใส่แล้วลิงก์จะกลายเป็น footnote ของเนื้อหานั้น (\link{ดูตัวอย่าง}{http://www.worldchanging.com/archives/007907.html})
 
+\end{description}
+
+นอกจากนี้ผู้จัดสามารถใช้ tag อื่น ๆ ของ \ltc{\LaTeX} ได้ตามปกติ อาทิเช่น
+
+\begin{description}
+
 \item[\textbackslash textbf] tag นี้มีไว้เน้นความสำคัญทำให้เป็น \textbf{ตัวหนา} ใช้ดังนี้ \texttt{\textbackslash textbf\{text to bold\}}
 
-\item[\textbackslash emph] tag นี้มีไว้เน้นความสำคัญทำให้เป็น \emph{ตัวเอียง} ใช้ดังนี้ \texttt{\textbackslash emph\{text to bold\}}
+\item[\textbackslash emph] tag นี้มีไว้เน้นความสำคัญทำให้เป็น \emph{ตัวเอียง} ใช้ดังนี้ \texttt{\textbackslash emph\{text to italic\}}
 
-นอกจากนี้ผู้จัดสามารถใช้ tag อื่น ๆ ของ \ltc{\LaTeX} ได้ตามปกติ
+\item[includegraphics] ดูรายละเอียดจาก \url{http://en.wikibooks.org/wiki/LaTeX/Importing_Graphics}
+
+\item[description]
+
+\item[itemize]
+
+\item[enumerate]
+
+\item[table]
 
 \end{description}
+
+อ่าน \url{http://en.wikibooks.org/wiki/LaTeX/Formatting} เพื่อรายละเอียดเพิ่มเติม
 
 \posttitle{โครงสร้างไฟล์หนังสือ}
 
@@ -103,7 +119,7 @@
 %!TEX encoding = UTF-8 Unicode
 
 \documentclass[12pt]{book}
-\usepackage{blog-to-book-1.00}
+\usepackage{b2b/blog-to-book}
 
 \title{book title goes here}
 \author{
@@ -111,11 +127,11 @@
 \texttt{GotoKnow.org/profile/<author's username>}
 }
 
-\include{blog-to-book-begin-1.00}
+\include{b2b/blog-to-book-begin}
 
 % book contents go here ....................
 
-\include{blog-to-book-end-1.00}
+\include{b2b/blog-to-book-end}
 
 \end{verbatim}
 
@@ -135,7 +151,7 @@ paragraph 3 .....................................................
 
 \end{verbatim}
 
-โดยในเนื้อหาของแต่ละ paragraph นั้นสามารถใช้ link textbf และ emph ได้ตามที่ผู้เขียนบันทึกนั้น ๆ ทำไว้ในเว็บไซต์
+โดยในเนื้อหาของแต่ละ paragraph นั้นสามารถใช้ link, textbf, emph, itemize, description, และ \ltc{\LaTeX} tag อื่น ๆ ได้ตามที่ผู้เขียนบันทึกนั้น ๆ ทำไว้ในเว็บไซต์
 
 ส่วน ``คำนำ" และ ``เกี่ยวกับผู้เขียน" ให้จัดเสมือนว่าเป็นบันทึกหนึ่ง
 
@@ -199,4 +215,4 @@ paragraph 3 .....................................................
 
 \noindent ...........................
 
-\include{blog-to-book-end-1.00}
+\include{b2b/blog-to-book-end}
