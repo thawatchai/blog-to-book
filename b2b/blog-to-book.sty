@@ -1,0 +1,42 @@
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{a4paper}
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+%\usepackage{fullpage}
+\usepackage{a4wide}
+\usepackage{sectsty}
+\usepackage{indentfirst}
+
+\renewcommand\contentsname{สารบัญ}
+\renewcommand\chaptername{}
+\renewcommand{\thechapter}{}
+\renewcommand{\thesection}{}
+
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text,Scale=1.3}
+\XeTeXlinebreaklocale “th_TH”
+\sloppy
+
+\setromanfont[Mapping=tex-text]{TH SarabunPSK}
+%\setromanfont[Mapping=tex-text]{TH Niramit AS}
+%\setromanfont[Mapping=tex-text]{TH Krub}
+%\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Gill Sans}
+%\setmonofont[Scale=0.9]{Latin Modern Mono}
+
+\newfontfamily{\ltcaps}[Scale=0.95]{Latin Modern Roman Caps}
+
+\newfontfamily{\charm}{TH Charm of AU}
+\newfontfamily{\charmonman}{TH Charmonman}
+\newfontfamily{\srisakdi}{TH Srisakdi}
+
+\chapterfont{\charmonman}
+\allsectionsfont{\charmonman}
+
+\newcommand{\ltc}[1]{\ltcaps{#1}\rmfamily}
+
+\newcommand{\link}[2]{#1\footnote{#2}}
+
+\newcommand{\posttitle}[1]{\chapter{#1}}
+\newcommand{\postdate}[1]{\noindent\textbf{#1} \\}
