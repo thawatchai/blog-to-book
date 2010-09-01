@@ -46,7 +46,7 @@
 
 \item[Git for Windows] เพื่อ download ไฟล์ช่วยสร้างหนังสือ
 
-\item[blog-to-book] download ด้วย git จาก \url{http://github.com/thawatchai/blog-to-book} หรือถ้าไม่ใช้ git จะคลิกที่ ``Download Source'' ที่มุมขวาบนก็ได้
+\item[blog-to-book] download ด้วย git จาก \url{http://github.com/thawatchai/blog-to-book} ควรใช้ git อย่าใช้ ``Download Source'' ที่มุมขวาบน เพราะจะทำให้การ upgrade ลำบาก
 
 \end{description}
 
@@ -61,12 +61,12 @@
 
 ไฟล์สองไฟล์นี้เป็นไฟล์ของเอกสารนี้
 
-และไฟล์ใน folder ย่อย b2b
+และไฟล์ใน folder ย่อย b2b/
 
 \begin{itemize}
-\item \texttt{blog-to-book.sty}
-\item \texttt{blog-to-book-begin.tex}
-\item \texttt{blog-to-book-end.tex}
+\item \texttt{b2b/blog-to-book.sty}
+\item \texttt{b2b/blog-to-book-begin.tex}
+\item \texttt{b2b/blog-to-book-end.tex}
 \end{itemize}
 
 ไฟล์เหล่านี้คือไฟล์เพื่อช่วยในการทำหนังสือ
@@ -79,9 +79,15 @@
 
 \begin{description}
 
-\item[\textbackslash posttitle] tag นี้มีไว้ใส่ชื่อบันทึก ใช้ดังนี้ \texttt{\textbackslash posttitle\{title text\}}
+\item[\textbackslash posttitle] tag นี้มีไว้ใส่ชื่อบันทึก ใช้ดังนี้ \texttt{\textbackslash posttitle\{title text\}} (ให้ใช้ postinfo แทน)
 
-\item[\textbackslash postdate] tag นี้มีไว้เพื่อใส่เวลาเขียนบันทึกนั้น ใช้ดังนี้ \texttt{\textbackslash postdate\{date\}}
+\item[\textbackslash postdate] tag นี้มีไว้เพื่อใส่เวลาเขียนบันทึกนั้น ใช้ดังนี้ \texttt{\textbackslash postdate\{date\}} (ให้ใช้ postinfo แทน)
+
+\item[\textbackslash postauthor] tag นี้มีไว้เพื่อใส่ชื่อผู้เขียนนั้น ใช้ดังนี้ \texttt{\textbackslash postauthor\{author\}} (ให้ใช้ postinfo แทน)
+
+\item[\textbackslash posturl] tag นี้มีไว้เพื่อใส่ URL ของบันทึกนั้น ใช้ดังนี้ \texttt{\textbackslash posturl\{url\}} (ให้ใช้ postinfo แทน)
+
+\item[\textbackslash postinfo] เป็น tag รวมของ tag ทั้งหมดข้างต้น ใช้ดังนี้ \texttt{\textbackslash postinfo\{title\}\{author\}\{url\}\{date\}}
 
 \item[\textbackslash link] tag นี้มีไว้เพื่อใส่ลิงก์ในเนื้อหาของบันทึก ใช้ดังนี้ \texttt{\textbackslash link\{Giving = Happiness\}\{http://www.worldchanging.com/archives/007907.html\}} เมื่อใส่แล้วลิงก์จะกลายเป็น footnote ของเนื้อหานั้น (\link{ดูตัวอย่าง}{http://www.worldchanging.com/archives/007907.html})
 
@@ -165,9 +171,7 @@ paragraph 3 .....................................................
 
 \end{itemize}
 
-\posttitle{ตัวอย่าง: พิสูจน์แล้ว การให้มีความสุขกว่าการรับ}
-
-\postdate{4 เมษายน 2551}
+\postinfo{ตัวอย่าง: พิสูจน์แล้ว การให้มีความสุขกว่าการรับ}{ผศ.ดร.ธวัชชัย ปิยะวัฒน์}{http://gotoknow.org/blog/averageline/175334}{4 เมษายน 2551}
 
 ข่าวใหญ่ประจำวันนี้ครับ เป็นข่าวใหญ่ในความรู้สึกผม แต่ไม่ได้เป็นข่าวใหญ่ที่สำนักข่าวไหน ๆ นำไปเป็นข่าวสำคัญครับ
 
@@ -201,9 +205,7 @@ paragraph 3 .....................................................
 
 \newpage
 
-\noindent\textbackslash posttitle\{ตัวอย่าง: พิสูจน์แล้ว การให้มีความสุขกว่าการรับ\} \\
-
-\noindent\textbackslash postdate\{4 เมษายน 2551\} \\
+\noindent\textbackslash postinfo\{ตัวอย่าง: พิสูจน์แล้ว การให้มีความสุขกว่าการรับ\}\{ผศ.ดร.ธวัชชัย ปิยะวัฒน์\}\{http://gotoknow.org/blog/averageline/175334\}\{4 เมษายน 2551\} \\
 
 \noindent ข่าวใหญ่ประจำวันนี้ครับ เป็นข่าวใหญ่ในความรู้สึกผม แต่ไม่ได้เป็นข่าวใหญ่ที่สำนักข่าวไหน ๆ นำไปเป็นข่าวสำคัญครับ \\
 

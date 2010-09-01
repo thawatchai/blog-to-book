@@ -42,4 +42,13 @@
 \newcommand{\link}[2]{#1\footnote{\url{#2}}}
 
 \newcommand{\posttitle}[1]{\chapter{#1}}
-\newcommand{\postdate}[1]{\noindent\textbf{#1} \\}
+\newcommand{\postauthor}[1]{\noindent\textbf{\Large{\charmonman{#1}}}}
+\newcommand{\postdate}[1]{\noindent\textbf{#1}}
+\newcommand{\posturl}[1]{\noindent\url{#1}}
+
+\newcommand{\postinfo}[4]{
+\posttitle{#1}
+\postauthor{#2} \\ \\
+\postdate{#4} \\
+\posturl{#3} \\ \\
+}
